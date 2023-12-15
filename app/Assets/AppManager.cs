@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System.Collections;
@@ -43,7 +43,7 @@ public class AppManager : MonoBehaviour
     public TextMeshProUGUI lbDistance;
 
     public TextMeshProUGUI lbDistanceM1;
-    public TextMeshProUGUI lbCumDistanceM1;    
+    public TextMeshProUGUI lbCumDistanceM1;
     public TextMeshProUGUI lbDistanceM2;
     public TextMeshProUGUI lbCumDistanceM2;
 
@@ -61,8 +61,8 @@ public class AppManager : MonoBehaviour
     // HEading
     private float thetaRel = 0;
     private float phiRel = 0;
-    private float psiRel = 0;    
-    
+    private float psiRel = 0;
+
     private float thetaAbs = 0;
     private float phiAbs = 0;
     private float psiAbs = 0;
@@ -98,15 +98,15 @@ public class AppManager : MonoBehaviour
         lbCumStepCount.text = cumStepCount.ToString();
 
         lbDistanceM1.text = distanceM1.ToString();
-        lbCumDistanceM1.text = cumDistanceM1.ToString();        
+        lbCumDistanceM1.text = cumDistanceM1.ToString();
         lbDistanceM2.text = distanceM2.ToString();
         lbCumDistanceM2.text = cumDistanceM2.ToString();
 
 
         lbThetaRel.text = thetaRel.ToString();
         lbPhiRel.text = phiRel.ToString();
-        lbPsiRel.text = psiRel.ToString();        
-        
+        lbPsiRel.text = psiRel.ToString();
+
         lbThetaAbs.text = thetaAbs.ToString();
         lbPhiAbs.text = phiAbs.ToString();
         lbPsiAbs.text = psiAbs.ToString();
@@ -123,7 +123,7 @@ public class AppManager : MonoBehaviour
         stepCount = stepCounter.GetStepCount();
         cumStepCount = stepCounter.GetCumStepCount();
         distanceM1 = distEstM1.GetDistance();
-        cumDistanceM1 = distEstM1.GetCumDistance();        
+        cumDistanceM1 = distEstM1.GetCumDistance();
         distanceM2 = distEstM2.GetDistance();
         cumDistanceM2 = distEstM2.GetCumDistance();
 
@@ -286,7 +286,7 @@ public class AppManager : MonoBehaviour
         stepCounter.SetStepCount(0);
         stepCounter.SetCumStepCount(0);
         distEstM1.SetDistance(0);
-        distEstM1.SetCumDistance(0);        
+        distEstM1.SetCumDistance(0);
         distEstM2.SetDistance(0);
         distEstM2.SetCumDistance(0);
 
@@ -317,7 +317,7 @@ public class AppManager : MonoBehaviour
         {
             distEstM1.SetHeight(float.Parse(height));
         }
-        
+
     }
     // ==============================
 

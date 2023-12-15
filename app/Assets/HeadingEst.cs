@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System;
@@ -39,13 +39,13 @@ public class HeadingEst : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -66,7 +66,7 @@ public class HeadingEst : MonoBehaviour
 
                     startTimeFlag = false;
                 }
-                
+
                 this.RunKalmanFilter();
 
                 double[] eulerAngle = MatLib.GetEulerAngle(qk);
@@ -86,10 +86,10 @@ public class HeadingEst : MonoBehaviour
 
         double[,] qkn = MatLib.MultiplyMatrix(A, qk);
         double[,] Pkn = MatLib.MultiplyMatrix(MatLib.MultiplyMatrix(A, Pk), MatLib.Transpose(A));
-        Pkn = MatLib.AddMatrix(Pkn, Q,1);
+        Pkn = MatLib.AddMatrix(Pkn, Q, 1);
 
         double[,] Kksub = MatLib.MultiplyMatrix(Pkn, MatLib.Transpose(C));
-        double[,] Kk = MatLib.AddMatrix(MatLib.MultiplyMatrix(C, Kksub),R,1);
+        double[,] Kk = MatLib.AddMatrix(MatLib.MultiplyMatrix(C, Kksub), R, 1);
         Kk = MatLib.InvertMatrix44(Kk);
         Kk = MatLib.MultiplyMatrix(Kksub, Kk);
 
