@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System.Collections;
@@ -24,9 +24,9 @@ public class HeadingRelEst : MonoBehaviour
 
     // Sensor data
     private double xGyr, yGyr, zGyr;
-    
+
     // Calculation
-    private double[,] last_qw = {{1},{0},{0},{0}};
+    private double[,] last_qw = { { 1 }, { 0 }, { 0 }, { 0 } };
     private double[,] qw = { { 1 }, { 0 }, { 0 }, { 0 } };
     private double[,] Fk;
     private float theta = 0, phi = 0, psi = 0;
@@ -37,13 +37,13 @@ public class HeadingRelEst : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
@@ -61,7 +61,7 @@ public class HeadingRelEst : MonoBehaviour
                 phi = Convert.ToSingle(eulerAngle[1] - phi0);
                 psi = Convert.ToSingle(eulerAngle[2] - psi0);
 
-            }  
+            }
         }
     }
 

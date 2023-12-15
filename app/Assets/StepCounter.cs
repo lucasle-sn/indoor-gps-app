@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System.Collections;
@@ -18,7 +18,7 @@ public class StepCounter : MonoBehaviour
 
     // Variables for dataLog
     private string appendData = "";
-    private bool logEnabled  = false;
+    private bool logEnabled = false;
 
     private bool startTimeFlag = false;
     private float startTime = 0.0f;
@@ -64,13 +64,13 @@ public class StepCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -91,7 +91,7 @@ public class StepCounter : MonoBehaviour
 
                 time = Time.time - startTime;
                 RunStepCount();
-                
+
                 //appendData = MergeAppendData();
             }
 
@@ -134,7 +134,7 @@ public class StepCounter : MonoBehaviour
     private string MergeAppendData()
     {
         //Log the time and sensor data
-        string data = System.Math.Round(time,2).ToString();
+        string data = System.Math.Round(time, 2).ToString();
         data += "," + xAcc + "," + yAcc + "," + zAcc;
         data += "," + xGyr + "," + yGyr + "," + zGyr;
         data += "," + xMag + "," + yMag + "," + zMag;
@@ -148,8 +148,8 @@ public class StepCounter : MonoBehaviour
     {
         if (firstStepCheckFlag && (time - lastPeakTime > THR_INTERVAL_MAX))
         {
-            stepCount --;
-            cumStepCount --;
+            stepCount--;
+            cumStepCount--;
             firstStepCheckFlag = false;
         }
 
@@ -185,12 +185,12 @@ public class StepCounter : MonoBehaviour
                 if (newMaxima - lastMaximaTime < THR_INTERVAL_MIN)
                     if (accMagLin_BP_lastMaxima < lastAccMagLin_BP)
                         lastMaximaTime = newMaxima;
-                else
-                {
-                    CheckFirstPeak();
-                    UpdatePeak();
-                    lastMaximaTime = newMaxima;
-                }
+                    else
+                    {
+                        CheckFirstPeak();
+                        UpdatePeak();
+                        lastMaximaTime = newMaxima;
+                    }
             }
         }
 
@@ -229,7 +229,7 @@ public class StepCounter : MonoBehaviour
     private void UpdatePeak()
     {
         lastPeakTime = lastMaximaTime;
-        stepCount ++;
+        stepCount++;
         cumStepCount++;
 
         realPeakUpdatedFlag = true;
@@ -260,7 +260,7 @@ public class StepCounter : MonoBehaviour
 
     public void SetStartTimeFlag(bool startTimeFlag)
     {
-        this.startTimeFlag = startTimeFlag;   
+        this.startTimeFlag = startTimeFlag;
     }
 
     public void SetStepCount(int stepCount)

@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System.Collections;
@@ -25,13 +25,13 @@ public class SensorReader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()

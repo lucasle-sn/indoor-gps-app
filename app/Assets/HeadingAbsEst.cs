@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System;
@@ -45,7 +45,7 @@ public class HeadingAbsEst : MonoBehaviour
     private double thetaRel = 0, phiRel = 0, psiRel = 0;
     private float theta0 = 0, phi0 = 0, psi0 = 0;
     private float inclAngle;
-    private double[,] qam = new double[4, 1] { { 1},{ 0},{ 0},{ 0} };
+    private double[,] qam = new double[4, 1] { { 1 }, { 0 }, { 0 }, { 0 } };
 
 
 
@@ -69,7 +69,7 @@ public class HeadingAbsEst : MonoBehaviour
             this.UpdateSensorData();
             this.GetMagCalib();
             this.GetAccGravity();
-            
+
 
             if (logEnabled)
             {
@@ -180,8 +180,8 @@ public class HeadingAbsEst : MonoBehaviour
         }
 
         thetaRel = Math.Round(theta - theta0, 2);
-        phiRel = Math.Round(phi - phi0,2);
-        psiRel = Math.Round(psi - psi0,2);
+        phiRel = Math.Round(phi - phi0, 2);
+        psiRel = Math.Round(psi - psi0, 2);
 
         double[,] dcm = MatLib.GetDCMEuler(thetaRel, phiRel, psiRel);
         qam = MatLib.GetUnitQuaternion(dcm);

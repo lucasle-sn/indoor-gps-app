@@ -2,7 +2,7 @@
  * The University of Melbourne
  * School of Engineering
  * MCEN90032 Sensor Systems
- * Author: Quang Trung Le (987445)
+ * Author: Quang Trung Le
  */
 
 using System.Collections;
@@ -271,9 +271,9 @@ public class MatLib : MonoBehaviour
 
         if (row == 3 && col == 3)
         {
-            double theta = Math.Asin(q[1,2]);
-            double phi = Math.Atan2(-q[0,2], q[2,2]);
-            double psi = Math.Atan2(-q[1,0], q[1,1]);
+            double theta = Math.Asin(q[1, 2]);
+            double phi = Math.Atan2(-q[0, 2], q[2, 2]);
+            double psi = Math.Atan2(-q[1, 0], q[1, 1]);
 
             result[0] = Math.Round(R2D(theta), 2);
             result[1] = Math.Round(R2D(phi), 2);
@@ -315,14 +315,14 @@ public class MatLib : MonoBehaviour
         int col = C.GetLength(1);
 
         double q0 = 0, q1 = 0, q2 = 0, q3 = 0;
-        if (row==3 && col == 3)
+        if (row == 3 && col == 3)
         {
-            q0 = Math.Sqrt(1 + C[0, 0] + C[1, 1] + C[2, 2])/2;
+            q0 = Math.Sqrt(1 + C[0, 0] + C[1, 1] + C[2, 2]) / 2;
             if (q0 == 0)
             {
-                q1 = Math.Sqrt(1 + C[0, 0] - C[1, 1] - C[2, 2])/2;
+                q1 = Math.Sqrt(1 + C[0, 0] - C[1, 1] - C[2, 2]) / 2;
                 q2 = (C[0, 1] + C[1, 0]) / (4 * q1);
-                q3 = (C[2,0] + C[0,2]) / (4 * q1);
+                q3 = (C[2, 0] + C[0, 2]) / (4 * q1);
                 q0 = (C[1, 2] - C[2, 1]) / (4 * q1);
             }
             else
@@ -353,7 +353,7 @@ public class MatLib : MonoBehaviour
         int row = mat.GetLength(0);
         int col = mat.GetLength(1);
 
-        if (row==4 && col == 4)
+        if (row == 4 && col == 4)
         {
             double[] m = new double[16];
             m[0] = mat[0, 0]; m[1] = mat[0, 1]; m[2] = mat[0, 2]; m[3] = mat[0, 3];
